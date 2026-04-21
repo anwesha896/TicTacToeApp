@@ -1,49 +1,33 @@
 public class UC1 {
-        // 3x3 board declaration
-        static char[][] board = new char[3][3];
 
-        /**
-         * Entry point of the program.
-         * It initializes the board and prints the empty grid.
-         */
-        public static void main(String[] args) {
-            initializeBoard();
-            printBoard();
-        }
+    // Declare 3x3 board
+    static char[][] board = new char[3][3];
 
-        /**
-         * Initializes the board by filling all cells with '-'
-         */
-        static void initializeBoard() {
-            for (int row = 0; row < 3; row++) {
-                for (int col = 0; col < 3; col++) {
-                    board[row][col] = '-';
-                }
-            }
-        }
+    public static void main(String[] args) {
 
-        /**
-         * Prints the Tic-Tac-Toe board in grid format
-         */
-        static void printBoard() {
-            System.out.println("Tic-Tac-Toe Board:");
+        // Initialize board with '-'
+        initializeBoard();
 
-            for (int row = 0; row < 3; row++) {
-                System.out.print(" ");
-                for (int col = 0; col < 3; col++) {
-                    System.out.print(board[row][col]);
+        // Print the board
+        printBoard();
+    }
 
-                    // Print vertical separator
-                    if (col < 2) {
-                        System.out.print(" | ");
-                    }
-                }
-                System.out.println();
-
-                // Print horizontal separator
-                if (row < 2) {
-                    System.out.println("-----------");
-                }
+    // Method to initialize board
+    static void initializeBoard() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                board[row][col] = '-';
             }
         }
     }
+
+    // Method to print board in required format
+    static void printBoard() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                System.out.print(board[row][col] + " ");
+            }
+            System.out.println(); // next line after each row
+        }
+    }
+}
